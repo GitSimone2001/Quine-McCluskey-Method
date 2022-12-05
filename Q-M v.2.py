@@ -80,7 +80,7 @@ for num in b_one_set:
         not_covered.append(num)
 print('Not Covered by EPIs: ', not_covered)
 
-product_of_sums = [' + '.join(essential_prime_implicants)]
+product_of_sums = essential_prime_implicants
 for num in not_covered:
     covers = []
     for prime in prime_implicants:
@@ -93,7 +93,9 @@ for num in not_covered:
     cover = covers[rand.randint(0, 1)]
     product_of_sums.append(cover)
 
+product_of_sums = list(dict.fromkeys(product_of_sums))
 print(' + '.join(product_of_sums))
+
 
 
 
